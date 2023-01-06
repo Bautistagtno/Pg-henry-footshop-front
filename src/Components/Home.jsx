@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getZapas } from "../Actions";
 import Cards from "./Card";
 import Paginado from "./Paginado";
+
+import NavBar from "./NavBar/NavBar";
 import './CSS/Home.css'
 
 
@@ -32,6 +34,9 @@ export default function Home(){
 return(
     
     <div>
+
+<NavBar/>
+
        <div className="cards">
         {
            currentZapas && currentZapas.map((e,i)=>{

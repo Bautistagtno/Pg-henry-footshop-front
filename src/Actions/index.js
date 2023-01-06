@@ -10,3 +10,19 @@ export function getZapas(){
         })
     }
 }
+
+export function getModeloZapas(modelo){
+    return async function(dispatch){
+        try{
+            var json = await axios.get(`http://localhost:3001/products/zapatillas?modelo=${modelo}`)
+            return dispatch({
+            type: 'GET_MODELO_ZAPAS',
+            payload: json.data
+        })
+            
+        }catch(error){
+            console.error(error)
+        }
+        
+}
+}

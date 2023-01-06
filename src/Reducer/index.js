@@ -1,6 +1,7 @@
 const initialState = {
     zapas: [],
     allZapas: [],
+    zapa: []
 }
 
 function rootReducer (state=initialState, action){
@@ -10,6 +11,11 @@ function rootReducer (state=initialState, action){
                 ...state,
                 zapas: action.payload,
                 allZapas: action.payload
+            }
+        case 'GET_ZAPA':
+            return{
+                ...state,
+                zapa: action.payload,
             }
         default:
             return state

@@ -1,11 +1,27 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import Home from './Components/Home';
+import Details from "./Components/Detail";
+import React from "react";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home/>,
+  },
+  {
+    path:"/details/:id",
+    element :<Details/>
+  }
+]);
 
 function App() {
   return (
-    <BrowserRouter>
-    <Home />
-    </BrowserRouter>
+    <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
   );
 }
 

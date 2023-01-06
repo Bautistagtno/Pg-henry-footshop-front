@@ -10,3 +10,14 @@ export function getZapas(){
         })
     }
 }
+
+export function getZapa(id){
+    return async function(dispatch){
+        var json = await axios.get('http://localhost:3001/products/zapatillas/' + id)
+        
+        return dispatch({
+        type: 'GET_ZAPA',
+        payload: json.data
+        })
+    }
+}

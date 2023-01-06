@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import {Link} from "react-router-dom"
 
 
-export default function Cards({marca, image, modelo, precio}){
+export default function Cards({id, marca, image, modelo, precio}){
    
    return(
     <Card style={{ width: '15rem' }}>
@@ -14,7 +15,7 @@ export default function Cards({marca, image, modelo, precio}){
           {modelo}
         </Card.Text>
         <Card.Title>${precio}</Card.Title>
-        <Button variant="primary">comprar</Button>
+        <Button variant="primary"><Link to ={"/details/" + id} >comprar</Link></Button>
       </Card.Body>
     </Card>
     

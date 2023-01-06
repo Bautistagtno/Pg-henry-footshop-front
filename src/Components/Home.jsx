@@ -38,6 +38,7 @@ return(
                return(
                    <div key={i}>
                     <Cards 
+                        id={e._id}
                         marca={e.marca} 
                         image={e.imagen1} 
                         modelo={e.modelo} 

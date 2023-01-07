@@ -30,3 +30,7 @@
 .logo{
     margin-left: 1cm;
 }
+.cardLink{
+    text-decoration: none;
+    color: black;
+}

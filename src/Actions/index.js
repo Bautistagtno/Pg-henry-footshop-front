@@ -26,3 +26,17 @@ export function getModeloZapas(modelo){
         
 }
 }
+
+export function getZapaById(id){
+    return async function (dispatch){
+        try {
+            let json = await axios.get(`http://localhost:3001/products/zapatillas/${id}`)
+            return dispatch({
+                type: 'GET_ZAPA_BY_ID',
+                payload: json.data
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}

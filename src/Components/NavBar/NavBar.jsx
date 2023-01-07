@@ -54,6 +54,7 @@ export default function NavBar(){
     // </div>
 
     <Navbar bg="primary" variant="dark">
+        <Link to='/Home'>
         <img
               src={logo}
               width="100"
@@ -61,6 +62,7 @@ export default function NavBar(){
               className="logo"
               alt="React Bootstrap logo"
             />
+        </Link>
         <Container>
             
           <Navbar.Brand href="#home">FootShop</Navbar.Brand>

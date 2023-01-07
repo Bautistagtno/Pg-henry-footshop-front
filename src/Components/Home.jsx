@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import { getZapas } from "../Actions";
 import Cards from "./Card";
 import Paginado from "./Paginado";
-
+import Carrusel from "./Carrusel";
 import NavBar from "./NavBar/NavBar";
 import './CSS/Home.css'
 
@@ -35,24 +35,24 @@ return(
     
     <div>
 
-<NavBar/>
-
-       <div className="cards">
-        {
-           currentZapas && currentZapas.map((e,i)=>{
-               return(
-                   <div key={i}>
-                    <Cards 
-                        marca={e.marca} 
-                        image={e.imagen1} 
-                        modelo={e.modelo} 
-                        precio={e.precio} 
-                        />
-                </div>
-            )
-        })
-    }
-        </div>
+        <NavBar/>
+            <Carrusel/>
+            <div className="cards">
+                {
+                    currentZapas && currentZapas.map((e,i)=>{
+                        return(
+                            <div key={i}>
+                                <Cards 
+                                    marca={e.marca} 
+                                    image={e.imagen1} 
+                                    modelo={e.modelo} 
+                                    precio={e.precio} 
+                                />
+                            </div>
+                              )
+                                                            })
+                }
+            </div>
         
        
         <Paginado

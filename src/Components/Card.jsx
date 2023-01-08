@@ -15,7 +15,7 @@ export default function Cards({id, marca, image, modelo, precio}){
           {modelo}
         </Card.Text>
         <Card.Title>${precio}</Card.Title>
-        <Button variant="primary"><Link to ={"/details/" + id} >comprar</Link></Button>
+        <Button href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' variant="primary">comprar</Button>
       </Card.Body>
     </Card>
     

@@ -3,25 +3,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Components/Home';
-import Details from "./Components/Detail";
-import React from "react";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home/>,
-  },
-  {
-    path:"/details/:id",
-    element :<Details/>
-  }
-]);
+import LandingPage from './Components/LandingPage/LandingPage';
+import Details from './Components/Detail';
 
 function App() {
   return (
-    <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <BrowserRouter>
+    <div>
+      <Routes>
+        <Route exact path = '/' element={<LandingPage/>} />
+        <Route path = '/Home' element={<Home/>} />
+        <Route exact path='/zapatillas/:id' element={<Details/>}/>
+    </Routes>
+    </div>
+    </BrowserRouter>
   );
 }
 

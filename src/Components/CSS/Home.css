@@ -27,3 +27,10 @@
     border: none;
     background:rgb(31, 75, 223);
 }
+.logo{
+    margin-left: 1cm;
+}
+.cardLink{
+    text-decoration: none;
+    color: black;
+}

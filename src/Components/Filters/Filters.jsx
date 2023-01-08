@@ -39,11 +39,13 @@ export const Filters = () => {
             <input type={'range'} min={0} max={900} onChange={(e) => filterPrecio(e)}/>
             <label>Selecciona una actividad</label>
             <select onClick={(e) => filterActividad(e)}>
+                <option value={'sin-actividad'}> Cualquiera </option>
                 <option value={'Moda'}> Moda </option>
                 <option value={'Basquet'}> Basquet </option>
             </select>
             <label>Selecciona una talla</label>
             <select onClick={(e) => filterTalla(e)}>
+                <option value={"sin-talla"}> Cualquiera </option>
                 <option value={34}> 34 </option>
                 <option value={35}> 35 </option>
                 <option value={36}> 36 </option>

@@ -35,7 +35,7 @@ export const Filters = () => {
 
     return (
         <div>
-            <label> Precio (0 - {value.precio}): </label>
+            <label> Precio ($0 - ${value.precio}): </label>
             <input type={'range'} min={0} max={900} onChange={(e) => filterPrecio(e)}/>
             <label>Selecciona una actividad</label>
             <select onClick={(e) => filterActividad(e)}>

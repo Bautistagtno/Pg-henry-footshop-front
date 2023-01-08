@@ -13,6 +13,7 @@ import './CSS/Home.css'
 
 
 
+
 export default function Home(){ 
     const dispatch = useDispatch()
     const allZapas = useSelector(state=> state.zapas)

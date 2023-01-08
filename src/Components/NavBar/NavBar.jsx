@@ -1,6 +1,6 @@
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from 'react-router-dom';
-import logo from "../imagenes/footshop.png"
+import logo from "../imagenes/footshopb.png"
 import './NavBar.css'
 
 import Button from 'react-bootstrap/Button';

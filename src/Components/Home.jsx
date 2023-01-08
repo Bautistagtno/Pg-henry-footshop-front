@@ -37,7 +37,9 @@ return(
     <div>
 
         <NavBar/>
+        
             <Carrusel/>
+        
             <div className="cards">
                 {
                     currentZapas && currentZapas.map((e,i)=>{

@@ -8,7 +8,7 @@ export default function Cards({marca, image, modelo, precio}){
    return(
     <Card style={{ width: '15rem' }}>
       <Card.Img variant="top" src={image} />
-      <Card.Body>
+      <Card.Body>-
         <Card.Title>{marca}</Card.Title>
         <Card.Text>
           {modelo}

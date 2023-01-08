@@ -5,6 +5,7 @@ import { getZapaById } from '../Actions';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
 import './CSS/Detail.css'
+import './CSS/Home.css'
 
 
 export default function Details() {

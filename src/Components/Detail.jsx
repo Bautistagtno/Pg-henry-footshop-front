@@ -13,6 +13,7 @@ import publi04 from './imagenes/detalleB04.png';
 import { Link } from 'react-router-dom';
 
 import './CSS/Detail.css'
+import './CSS/Home.css'
 
 
 export default function Details() {

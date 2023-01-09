@@ -14,7 +14,7 @@ export default function Cards({marca, image, modelo, precio}){
           {modelo}
         </Card.Text>
         <Card.Title>${precio}</Card.Title>
-        <Button href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' variant="primary">comprar</Button>
+        <Button href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' variant="primary">Comprar</Button>
       </Card.Body>
     </Card>
     

@@ -7,7 +7,8 @@ export const Filters = () => {
     const inicialState = {
         talla: '',
         precio: '',
-        actividad: 'moda'
+        actividad: 'moda',
+        order: 'default'
     };
 
     let dispatch = useDispatch();
@@ -27,6 +28,10 @@ export const Filters = () => {
 
     const filterPrecio = (e) => {
         setValue({ ...value, precio: e.target.value })
+    };
+    
+    const setOrder = (e) => {
+        setValue({ ...value, order: e.target.value })
     };
 
     const handleOnFilters = () => {
@@ -64,6 +69,14 @@ export const Filters = () => {
                 <option value={47}> 47 </option>
                 <option value={48}> 48 </option>
                 <option value={49}> 49 </option>
+            </select>
+            <label>Ordenar por precio o modelo</label>
+            <select onClick={(e) => setOrder(e)}>
+                <option value={'default'}> Cualquiera </option>
+                <option value={'precioUp'}> Mayor a menor precio </option>
+                <option value={'precioDown'}> Menor a mayor precio </option>
+                <option value={'modeloUp'}> A - Z </option>
+                <option value={'modeloDown'}> Z - A </option>
             </select>
             <button onClick={() => handleOnFilters()}> Aplicar filtros </button>
         </div>

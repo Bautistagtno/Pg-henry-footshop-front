@@ -39,10 +39,13 @@ export default function Home(){
 
         <div>
 
+
             <NavBar />
             <Filters />
             <Carrusel />
+
             <button><Link  to= '/Crear'>Cargar Zapas</Link></button>   
+
 
             <div className="cards">
                 {

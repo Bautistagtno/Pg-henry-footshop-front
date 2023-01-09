@@ -1,0 +1,24 @@
+.carru{
+    width:30cm;
+    margin-top: 50px;
+    margin-left: 10cm;
+    margin-bottom: 30px;
+    /* padding: 5px; */
+    /* position: relative; */
+    /* display: flex; */
+    align-items: center;
+
+}
+
+.propa{
+    width:9cm;
+    margin-top: 50px;
+    margin-left: 20cm;
+    margin-bottom: 30px;
+    padding: 5px;
+    /* position: relative; */
+    /* display: flex; */
+    /* align-items: center; */
+
+}
+

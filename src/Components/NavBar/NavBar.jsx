@@ -1,14 +1,10 @@
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from 'react-router-dom';
 import logo from "../imagenes/footshop.png"
-import './NavBar.css'
-
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import '../CSS/Home.css'
 
 
 export default function NavBar(){
@@ -71,15 +67,7 @@ export default function NavBar(){
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="light">Search</Button>
-          </Form>
+          <SearchBar/>
         </Container>
       </Navbar>
 

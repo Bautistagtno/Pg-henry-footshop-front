@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { getModeloZapas } from "../../Actions";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 
@@ -43,12 +45,25 @@ export default function SearchBar(){
 
     return(
         <div >
-            <input
+            {/* <input
             type = 'text'
             placeholder= "Buscar Zapatilla"
             onChange={(e) => handleInputChange(e)}
             value={modelo}
-            /><button type= 'submit' onClick={(e) => handleSubmit(e)}>Buscar</button>
+            /><button type= 'submit' onClick={(e) => handleSubmit(e)}>Buscar</button> */}
+        
+        <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Buscar Zapatilla"
+              onChange={(e) => handleInputChange(e)}
+              value={modelo}
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button className="btnSearch" variant="light" type= 'submit' onClick={(e) => handleSubmit(e)}>Buscar</Button>
+          </Form>
         </div>
+        
     )
 }

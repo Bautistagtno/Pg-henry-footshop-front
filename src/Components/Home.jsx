@@ -14,7 +14,9 @@ import { Filters } from "./Filters/Filters";
 
 
 
-export default function Home() {
+
+export default function Home(){ 
+
     const dispatch = useDispatch()
     const allZapas = useSelector(state => state.zapas)
     const [currentPage, setCurrentPage] = useState(1)

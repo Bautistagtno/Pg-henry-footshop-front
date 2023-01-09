@@ -25,7 +25,7 @@ export default function SearchBar(){
         
     }
     
-    console.log(zapaFilter, 'searchbar')
+    //console.log(zapaFilter, 'searchbar')
     
     
 //     if(zapaFilter.length === 0){

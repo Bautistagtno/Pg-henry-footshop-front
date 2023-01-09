@@ -33,6 +33,11 @@ function rootReducer(state = initialState, action) {
                 zapas: action.payload
             };
 
+        case "POST_PRODUCT":
+            return {
+                ...state,
+            };
+
         default:
             return state
     }

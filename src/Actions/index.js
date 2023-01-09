@@ -50,3 +50,11 @@ export function getFilters ({talla, precio, actividad, order}) {
         })
     }
 }
+
+export function postProduct (payload){
+    return async function (dispatch){
+        const response = await axios.post('http://localhost:3001/products/zapatillas', payload)
+        console.log(response)
+        return response;
+    }
+}

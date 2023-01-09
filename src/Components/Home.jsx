@@ -44,6 +44,9 @@ export default function Home(){
             <Filters />
             <Carrusel />
 
+            <button><Link  to= '/Crear'>Cargar Zapas</Link></button>   
+
+
             <div className="cards">
                 {
                     currentZapas && currentZapas.map((e, i) => {

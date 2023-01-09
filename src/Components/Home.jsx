@@ -39,9 +39,11 @@ export default function Home(){
 
         <div>
 
+
             <NavBar />
             <Filters />
             <Carrusel />
+
             <div className="cards">
                 {
                     currentZapas && currentZapas.map((e, i) => {

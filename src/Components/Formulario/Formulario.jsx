@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { useForm } from "react-hook-form";
+
 import { postProduct } from "../../Actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";

@@ -10,8 +10,9 @@ import { Link } from 'react-router-dom';
 
 export default function Carrusel() {
   return (
+    
     <Carousel variant="dark">
-      <Carousel.Item>
+      <Carousel.Item >
       <Link to='/zapatillas/63b622352bdf1dfe9c9c3ba0'>
         <img
           className="carru"
@@ -53,5 +54,6 @@ export default function Carrusel() {
         
       </Carousel.Item>
     </Carousel>
+    
   );
 }

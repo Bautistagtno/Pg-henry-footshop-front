@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { useForm } from "react-hook-form";
+
 import { postProduct } from "../../Actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ const HookForm = () => {
     // if (!whitespacesParameter.test(newrecipe.name) || !alphabeticalPattern.test(newrecipe.name)){
     //     errors.name= "El nombre ingresado no puede contener caracteres especiales ni números"
     //   }
-
+    
     function validation(input) {
         let whitespacesParameter = /(?!^\s+$)^.*$/m;  //controla caracteres especiales
         let alphabeticalPattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/; //controla que solo sean letras
@@ -140,6 +140,7 @@ const HookForm = () => {
             ],
             color1: ""
         }))
+        
     }
     // -----------------------------------------------------------------------------
 
@@ -163,7 +164,8 @@ const HookForm = () => {
 
         })
         // history.push('/home')
-
+        
+        console.log(input, 'input')
     }
 
     return (

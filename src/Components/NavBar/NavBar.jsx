@@ -5,7 +5,7 @@ import './NavBar.css'
 
 import Button from 'react-bootstrap/Button';
 
-import logo from "../imagenes/footshop.png"
+import logo from "../imagenes/footshopb.png"
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -74,6 +74,9 @@ export default function NavBar(){
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <SearchBar/>
+          <Link  to= '/login'>
+          <Button className="btnLogin" variant="light">Ingresar</Button>
+          </Link>
         </Container>
       </Navbar>
 

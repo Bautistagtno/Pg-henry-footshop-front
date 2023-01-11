@@ -45,7 +45,7 @@ export default function Home(){
             <Carrusel />
 
             <button><Link  to= '/Crear'>Cargar Zapas</Link></button>   
-            <button><Link  to= '/login'>Ingresar</Link></button>   
+               
 
 
             <div className="cards">

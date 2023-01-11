@@ -37,6 +37,16 @@
 .btnSearch:hover{
     transition: 0.2s;
     border: none;
-    background:rgb(2, 59, 247);
+    background:rgb(37, 78, 212);
+    color: white;
+}
+.btnLogin{
+    text-decoration: none;
+    margin-left: 5px;
+}
+.btnLogin:hover{
+    transition: 0.2s;
+    border: none;
+    background:rgb(37, 78, 212);
     color: white;
 }

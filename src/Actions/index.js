@@ -40,3 +40,24 @@ export function getZapaById(id){
         }
     }
 }
+
+export function getFilters ({talla, precio, actividad, order}) {
+    return async function (dispatch) {
+        var filters = await axios.get(`http://localhost:3001/products/filtros?talla=${talla}&&precio=${precio}&&actividad=${actividad}&&order=${order}`)
+        return dispatch({
+            type: "GET_FILTERS",
+            payload: filters.data
+        })
+    }
+}
+
+export function postProduct (payload){
+    return async function (dispatch){
+        const response = await axios.post('http://localhost:3001/products/zapatillas', payload)
+        //console.log(response)
+        return dispatch({
+            type: "POST_PRODUCT",
+            response
+        });
+    }
+}

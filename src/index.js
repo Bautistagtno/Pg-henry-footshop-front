@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux';
 import {store} from './Store';
 import { Auth0Provider } from "@auth0/auth0-react";
+import 'bootstrap/dist/css/bootstrap.css'; 
+import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

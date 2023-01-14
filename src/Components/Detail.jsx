@@ -4,13 +4,13 @@ import { useParams } from 'react-router-dom';
 import { getZapaById } from '../Actions';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
-
+import Button from 'react-bootstrap/Button';
 
 import publi01 from './imagenes/detalleB01.png';
 import publi02 from './imagenes/detalleB02.png';
 import publi03 from './imagenes/detalleB03.png';
 import publi04 from './imagenes/detalleB04.png';
-import { Link } from 'react-router-dom';
+
 
 import './CSS/Detail.css'
 import './CSS/Home.css'
@@ -28,7 +28,7 @@ export default function Details() {
    }, [id])
 
   
-
+   
 
    return (
       
@@ -45,7 +45,7 @@ export default function Details() {
                         <Carousel.Item>
                            <img
                               className="imgDet d-block w-50"
-                              src={zapa.imagen1}
+                              src={zapa.imagenes && zapa.imagenes[0]}
                               alt="First slide"
                            />
                           
@@ -53,7 +53,7 @@ export default function Details() {
                         <Carousel.Item>
                            <img
                               className="imgDet d-block w-50"
-                              src={zapa.imagen2}
+                              src={zapa.imagenes && zapa.imagenes[1]}
                               alt="Second slide"
                            />
                           
@@ -61,7 +61,7 @@ export default function Details() {
                         <Carousel.Item>
                            <img
                               className="imgDet d-block w-50"
-                              src={zapa.imagen3}
+                              src={zapa.imagenes && zapa.imagenes[2]}
                               alt="Third slide"
                            />
                            
@@ -82,30 +82,18 @@ export default function Details() {
                      <h4 class="price">PRECIO: <span>${zapa.precio}</span></h4>
                      <h5>TALLES:
                         <select class="sizes">
-                           {
-                              zapa.talles && zapa.talles.map((e, i) => {
-                                 return (
-                                    <option key={i}>{e}</option>
-                                 )
-                              })
-                           }
+                           <option>{zapa.talle}</option>
 
                         </select>
                      </h5>
                      <h5 class="colors">COLORES:
                         <select class='colorSelec'>
-                           {
-                              zapa.color && zapa.color.map((e, i) => {
-                                 return (
-                                    <option key={i}>{e}</option>
-                                 )
-                              })
-                           }
+                           <option>{zapa.color}</option>
                         </select>
                      </h5>
                      <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">COMPRAR</button>
-                        <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span>AÑADIR AL CARRITO</button>
+                        <Button variant="primary">Comprar</Button>
+                        <Button value='add' className='btnCart' variant="primary">Añadir al carrito</Button>
                      </div>
                   </div>
                </div>

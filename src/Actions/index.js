@@ -36,7 +36,7 @@ export function getZapaById(id){
                 payload: json.data
             })
         } catch (error) {
-            console.log(error)
+            console.log(error, 'err')
         }
     }
 }
@@ -61,3 +61,4 @@ export function postProduct (payload){
         });
     }
 }
+

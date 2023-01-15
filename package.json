@@ -12,6 +12,7 @@
     "react": "^18.2.0",
     "react-arrow-nav": "^0.0.2",
     "react-bootstrap": "^2.7.0",
+    "react-bootstrap-range-slider": "^3.0.8",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.5",
     "react-infinite-scroll-component": "^6.1.0",

@@ -5,11 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getZapas } from "../Actions";
 import Cards from "./Card";
 import Paginado from "./Paginado";
-import Carrusel from "./Carrusel";
+import Carrusel from "./Carrusels/Carrusel";
 import NavBar from "./NavBar/NavBar";
 import './CSS/Home.css'
 import { Filters } from "./Filters/Filters";
 
+
+// import Scroll from "./Scroll/Scroll";
+import CarruselFav from "./Carrusels/CarruselFav";
+import CarruselMasV from "./Carrusels/CarruselMasV";
 
 
 
@@ -41,7 +45,7 @@ export default function Home(){
 
 
             <NavBar />
-            <Filters />
+            {/* <Filters /> */}
             <Carrusel />
 
             <button><Link  to= '/Crear'>Cargar Zapas</Link></button>   
@@ -74,6 +78,11 @@ export default function Home(){
                 paginado={paginado}
             />
 
+            <CarruselFav/> 
+            <CarruselMasV/> 
+
+
+                
 
         </div>
     )

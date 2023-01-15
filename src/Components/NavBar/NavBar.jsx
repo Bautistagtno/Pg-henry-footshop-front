@@ -69,8 +69,16 @@ export default function NavBar(){
             
           <Navbar.Brand href="#home">FootShop</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
+            
+            <Link  to='/home'>
+          <Button className="productos" >Home</Button>
+          </Link>
+
+            <Link  to='/zapatillas'>
+          <Button className="productos" >Productos</Button>
+          </Link>
+            
+
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <SearchBar/>

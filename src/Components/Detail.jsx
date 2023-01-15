@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom';
 
 import './CSS/Detail.css'
 import './CSS/Home.css'
+import CarruselPromo from './Carrusels/CarruselPromo';
 
 
 export default function Details() {
@@ -35,11 +36,11 @@ export default function Details() {
       
       <div>
          <NavBar/>
-      <div class="container">
-         <div class="card">
-            <div class="container-fliud">
-               <div class="wrapper row">
-                  <div class="preview col-md-6">
+      <div className="container">
+         <div className="card">
+            <div className="container-fliud">
+               <div className="wrapper row">
+                  <div className="preview col-md-6">
 
                      <Carousel variant="dark">
                         <Carousel.Item>
@@ -68,20 +69,20 @@ export default function Details() {
                         </Carousel.Item>
                      </Carousel>
                      
-                     <ul class="preview-thumbnail nav nav-tabs">
-                        <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen1} /></a></li>
-                        <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen2} /></a></li>
+                     <ul className="preview-thumbnail nav nav-tabs">
+                        <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen1} /></a></li>
+                        <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen2} /></a></li>
                         <li><a data-target="#pic-2" data-toggle="tab"><img src={zapa.imagen3} /></a></li>
 
                      </ul>
 
                   </div>
-                  <div class="details col-md-6">
-                     <h3 class="product-title">{zapa.marca}</h3>
-                     <p class="product-description">{zapa.modelo}</p>
-                     <h4 class="price">PRECIO: <span>${zapa.precio}</span></h4>
+                  <div className="details col-md-6">
+                     <h3 className="product-title">{zapa.marca}</h3>
+                     <p className="product-description">{zapa.modelo}</p>
+                     <h4 className="price">PRECIO: <span>${zapa.precio}</span></h4>
                      <h5>TALLES:
-                        <select class="sizes">
+                        <select className="sizes">
                            {
                               zapa.talles && zapa.talles.map((e, i) => {
                                  return (
@@ -92,8 +93,8 @@ export default function Details() {
 
                         </select>
                      </h5>
-                     <h5 class="colors">COLORES:
-                        <select class='colorSelec'>
+                     <h5 className="colors">COLORES:
+                        <select className='colorSelec'>
                            {
                               zapa.color && zapa.color.map((e, i) => {
                                  return (
@@ -103,9 +104,9 @@ export default function Details() {
                            }
                         </select>
                      </h5>
-                     <div class="action">
-                        <button class="add-to-cart btn btn-default" type="button">COMPRAR</button>
-                        <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span>AÑADIR AL CARRITO</button>
+                     <div className="action">
+                        <button className="add-to-cart btn btn-default" type="button">COMPRAR</button>
+                        <button className="like btn btn-default" type="button"><span className="fa fa-heart"></span>AÑADIR AL CARRITO</button>
                      </div>
                   </div>
                </div>
@@ -113,7 +114,9 @@ export default function Details() {
          </div>
       </div>
       <div>
-      <Carousel variant="dark">
+
+         <CarruselPromo/>
+      {/* <Carousel variant="dark">
       <Carousel.Item>
       <a href='http://localhost:3000/zapatillas/63b626932bdf1dfe9c9e107a'>
         <img
@@ -155,7 +158,7 @@ export default function Details() {
           </a>
         
       </Carousel.Item>
-    </Carousel>
+    </Carousel> */}
       </div>
       </div>
 

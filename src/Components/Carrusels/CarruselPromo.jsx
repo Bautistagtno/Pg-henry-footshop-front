@@ -5,10 +5,13 @@ import publi04 from '../imagenes/detalleB04.png';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 
+import '../CSS/Carrusel.css'
+
 export default function CarruselPromo(){
 
   return(
 <div>
+
       <Carousel variant="dark">
       <Carousel.Item>
       <a href='http://localhost:3000/zapatillas/63b626932bdf1dfe9c9e107a'>

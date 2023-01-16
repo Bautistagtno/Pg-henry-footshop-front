@@ -5,50 +5,55 @@ import publi04 from '../imagenes/detalleB04.png';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 
+import '../CSS/Carrusel.css'
+
 export default function CarruselFav(){
 
   return(
 <div>
+
+    <h1 className='palabras'>En oferta</h1>
+  
       <Carousel variant="dark">
       <Carousel.Item>
-      <a href='http://localhost:3000/zapatillas/63b626932bdf1dfe9c9e107a'>
+      <Link to='/zapatillas/63c20aa4708cd41c2ea5e9f3'>
       <img
       className="propa"
       src={publi01}
       alt="First slide"
       />
-      </a>
+      </Link>
       
       </Carousel.Item>
       <Carousel.Item>
-      <a href='http://localhost:3000/zapatillas/63b6240d2bdf1dfe9c9d01bd'>
+      <Link to='/zapatillas/63c20aa4708cd41c2ea5e9db'>
 <img
 className="propa"
 src={publi02}
 alt="Second slide"
 />
-</a>
+</Link>
 
 </Carousel.Item>
 <Carousel.Item>
-<a href='http://localhost:3000/zapatillas/63b621ea2bdf1dfe9c9c1c68'>
+<Link to='/zapatillas/63c20aa4708cd41c2ea5e9d0'>
 <img
 className="propa"
 src={publi03}
 alt="Third slide"
 />
-</a>
+</Link>
 
 </Carousel.Item>
 
 <Carousel.Item>
-<a href='http://localhost:3000/zapatillas/63b626f22bdf1dfe9c9e3654'>
+<Link to='/zapatillas/63c20aa4708cd41c2ea5e9f9'>
 <img
 className="propa"
 src={publi04}
 alt="Forth slide"
 />
-    </a>
+    </Link>
     
     </Carousel.Item>
     </Carousel>

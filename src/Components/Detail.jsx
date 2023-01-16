@@ -5,6 +5,8 @@ import { getZapaById } from '../Actions';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
 import Button from 'react-bootstrap/Button';
+import { addToCart } from '../Actions';
+
 
 import publi01 from './imagenes/detalleB01.png';
 import publi02 from './imagenes/detalleB02.png';
@@ -28,85 +30,90 @@ export default function Details() {
       dispatch(getZapaById(id))
    }, [id])
 
-  
-   
+
+   const handleToCart = (e) => {
+      e.preventDefault();
+      //console.log(id)
+      dispatch(addToCart(id))
+   }
 
    return (
-      
-      
+
+
       <div>
-         <NavBar/>
-      <div className="container">
-         <div className="card">
-            <div className="container-fliud">
-               <div className="wrapper row">
-                  <div className="preview col-md-6">
+         <NavBar />
+         <div className="container">
+            <div className="card">
+               <div className="container-fliud">
+                  <div className="wrapper row">
+                     <div className="preview col-md-6">
 
-                     <Carousel variant="dark">
-                        <Carousel.Item>
-                           <img
-                              className="imgDet d-block w-50"
-                              src={zapa.imagenes && zapa.imagenes[0]}
-                              alt="First slide"
-                           />
-                          
-                        </Carousel.Item>
-                        <Carousel.Item>
-                           <img
-                              className="imgDet d-block w-50"
-                              src={zapa.imagenes && zapa.imagenes[1]}
-                              alt="Second slide"
-                           />
-                          
-                        </Carousel.Item>
-                        <Carousel.Item>
-                           <img
-                              className="imgDet d-block w-50"
-                              src={zapa.imagenes && zapa.imagenes[2]}
-                              alt="Third slide"
-                           />
-                           
-                        </Carousel.Item>
-                     </Carousel>
-                     
-                     <ul className="preview-thumbnail nav nav-tabs">
-                        <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen1} /></a></li>
-                        <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen2} /></a></li>
-                        <li><a data-target="#pic-2" data-toggle="tab"><img src={zapa.imagen3} /></a></li>
+                        <Carousel variant="dark">
+                           <Carousel.Item>
+                              <img
+                                 className="imgDet d-block w-50"
+                                 src={zapa.imagenes && zapa.imagenes[0]}
+                                 alt="First slide"
+                              />
 
-                     </ul>
+                           </Carousel.Item>
+                           <Carousel.Item>
+                              <img
+                                 className="imgDet d-block w-50"
+                                 src={zapa.imagenes && zapa.imagenes[1]}
+                                 alt="Second slide"
+                              />
 
-                  </div>
-                  <div className="details col-md-6">
-                     <h3 className="product-title">{zapa.marca}</h3>
-                     <p className="product-description">{zapa.modelo}</p>
-                     <h4 className="price">PRECIO: <span>${zapa.precio}</span></h4>
-                     <h5>TALLES:
+                           </Carousel.Item>
+                           <Carousel.Item>
+                              <img
+                                 className="imgDet d-block w-50"
+                                 src={zapa.imagenes && zapa.imagenes[2]}
+                                 alt="Third slide"
+                              />
 
-                        <select class="sizes">
-                           <option>{zapa.talle}</option>
+                           </Carousel.Item>
+                        </Carousel>
 
-                        </select>
-                     </h5>
-                     <h5 class="colors">COLORES:
-                        <select class='colorSelec'>
-                           <option>{zapa.color}</option>
-                        </select>
-                     </h5>
-                     <div class="action">
-                        <Button variant="primary">Comprar</Button>
-                        <Button value='add' className='btnCart' variant="primary">Añadir al carrito</Button>
+                        <ul className="preview-thumbnail nav nav-tabs">
+                           <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen1} /></a></li>
+                           <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={zapa.imagen2} /></a></li>
+                           <li><a data-target="#pic-2" data-toggle="tab"><img src={zapa.imagen3} /></a></li>
 
+                        </ul>
+
+                     </div>
+                     <div className="details col-md-6">
+                        <h3 className="product-title">{zapa.marca}</h3>
+                        <p className="product-description">{zapa.modelo}</p>
+                        <h4 className="price">PRECIO: <span>${zapa.precio}</span></h4>
+                        <h5>TALLES:
+
+                           <select class="sizes">
+                              <option>{zapa.talle}</option>
+
+                           </select>
+                        </h5>
+                        <h5 class="colors">COLORES:
+                           <select class='colorSelec'>
+                              <option>{zapa.color}</option>
+                           </select>
+                        </h5>
+                        <div class="action">
+                           <Button variant="primary">Comprar</Button>
+                           <Button value='add' className='btnCart' variant="primary" onClick={handleToCart}
+                           >Añadir al carrito</Button>
+
+                        </div>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-      </div>
-      <div>
+         <div>
 
-         <CarruselPromo/>
-      {/* <Carousel variant="dark">
+            <CarruselPromo />
+            {/* <Carousel variant="dark">
       <Carousel.Item>
       <a href='http://localhost:3000/zapatillas/63b626932bdf1dfe9c9e107a'>
         <img
@@ -149,7 +156,7 @@ export default function Details() {
         
       </Carousel.Item>
     </Carousel> */}
-      </div>
+         </div>
       </div>
 
    );

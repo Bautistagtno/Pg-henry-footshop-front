@@ -81,13 +81,17 @@ export default function NavBar() {
 
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
-        <Link to={"/compras"}>
-          <Button className="btnLogin">Carrito</Button>
+      
+        <Link className='btnCart' to={"/compras"}>
+          <Button  variant="light">🛒</Button>
         </Link>
+        
         <SearchBar />
-        <Link to='/login'>
-          <Button className="btnLogin" variant="light">Ingresar</Button>
+        
+        <Link className="btnLogin"  to='/login'>
+          <Button variant="light">Ingresar</Button>
         </Link>
+      
       </Container>
     </Navbar>
 

@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 
 
 
+
 export default function SearchBar(){
     const dispatch = useDispatch();
     const [modelo, setModelo] = useState("");

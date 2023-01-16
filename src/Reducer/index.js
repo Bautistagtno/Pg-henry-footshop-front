@@ -2,7 +2,8 @@
 const initialState = {
     zapas: [],
     allZapas: [],
-    detail: []
+    detail: [],
+    cart: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -37,6 +38,21 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
             };
+
+        case "ADD_TO_CART":
+            const item =  action.payload;
+            //const existItem = state.cart.find(e => e._id === item._id);
+               // console.log(item)
+                return{ 
+                    ...state,
+                    cart: [...state.cart, item]
+                };
+
+            case "REMOVE_TO_CART": 
+                return {
+                    ...state,
+                    cart: state.cart.filter(e => e._id !== action.payload)
+                };
 
         default:
             return state

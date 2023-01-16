@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getZapaById } from '../Actions';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
 import Button from 'react-bootstrap/Button';
+import { addToCart } from '../Actions';
 
 import publi01 from './imagenes/detalleB01.png';
 import publi02 from './imagenes/detalleB02.png';
@@ -16,16 +17,25 @@ import './CSS/Detail.css'
 import './CSS/Home.css'
 
 
+
 export default function Details() {
 
    const { id } = useParams()
    const dispatch = useDispatch()
-   const zapa = useSelector(state => state.detail)
+   const zapa = useSelector(state => state.detail);
+   //const cart = useSelector(state => state.cart)
 
+   //console.log(zapa)
 
    useState(() => {
       dispatch(getZapaById(id))
-   }, [id])
+   }, [id]);
+
+   const handleToCart = (e) => {
+      e.preventDefault();
+      //console.log(id)
+      dispatch(addToCart(id))
+   }
 
   
    
@@ -93,7 +103,11 @@ export default function Details() {
                      </h5>
                      <div class="action">
                         <Button variant="primary">Comprar</Button>
-                        <Button value='add' className='btnCart' variant="primary">Añadir al carrito</Button>
+                    
+                        <Button value={zapa} className='btnCart' variant="primary"
+                           onClick={handleToCart}
+                        >Añadir al carrito</Button>
+                      
                      </div>
                   </div>
                </div>

@@ -5,6 +5,7 @@ import Details from './Components/Detail';
 import Formulario from './Components/Formulario/Formulario'
 import Login from './Components/Login/Login';
 import UploadImg from "./Components/Admin/uploadImg";
+import ShopCart from './Components/ShoppingCar/ShopCart.jsx'
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
     <div>
       <Routes>
+        <Route Route exact path='/compras' element={<ShopCart/>}></Route>
         <Route exact path='/login' element={<Login/>}/>
         <Route exact path = '/' element={<LandingPage/>} />
         <Route exact path='/uploadImg' element={<UploadImg/>}/>

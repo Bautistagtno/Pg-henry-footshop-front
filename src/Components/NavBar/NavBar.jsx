@@ -13,21 +13,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import '../CSS/Home.css'
 
 
-export default function NavBar(){
+export default function NavBar() {
 
-    return(
+  return (
     //     <div>
 
 
-              
+
 
     //         <h1  className='titulo'>Zapatero a tus servicios</h1>
-            
+
     //         <SearchBar/>
 
     //         <Link  className='create' to='/Home'><img className='lhome' src={logo} alt='a'/></Link>
-            
-            
+
+
 
     //         <div className='contenidoselects'>
     //             <select >
@@ -41,7 +41,7 @@ export default function NavBar(){
     //                 <option value="asc">Ascendente</option>
     //                 <option value="des">Descendente</option>
     //             </select>
-               
+
     //             {/* <select  >
     //               <option defaultValue='All'>Marcas</option> 
     //             { allZapas.map((e,i)=>{
@@ -51,34 +51,37 @@ export default function NavBar(){
     //                     )
     //                 }   
     //         </select> */}
-    
+
     //         </div>
     // </div>
 
     <Navbar bg="primary" variant="dark">
-        <Link to='/Home'>
+      <Link to='/Home'>
         <img
-              src={logo}
-              width="100"
-              height="80"
-              className="logo"
-              alt="React Bootstrap logo"
-            />
-        </Link>
-        <Container>
-            
-          <Navbar.Brand href="#home">FootShop</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <SearchBar/>
-          <Link  to= '/login'>
-          <Button className="btnLogin" variant="light">Ingresar</Button>
-          </Link>
-        </Container>
-      </Navbar>
+          src={logo}
+          width="100"
+          height="80"
+          className="logo"
+          alt="React Bootstrap logo"
+        />
+      </Link>
+      <Container>
 
-    )
+        <Navbar.Brand href="#home">FootShop</Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+        </Nav>
+        <SearchBar />
+        <Link to={"/compras"}>
+          <Button className="btnLogin">Cart</Button>
+        </Link>
+        <Link to='/login'>
+          <Button className="btnLogin" variant="light">Ingresar</Button>
+        </Link>
+      </Container>
+    </Navbar>
+
+  )
 }

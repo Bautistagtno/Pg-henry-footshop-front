@@ -35,6 +35,7 @@ export default function Details() {
       e.preventDefault();
       //console.log(id)
       dispatch(addToCart(id))
+      window.alert("Producto añadido al carrito exitosamente!");
    }
 
    return (

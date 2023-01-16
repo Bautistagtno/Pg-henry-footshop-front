@@ -27,3 +27,26 @@
     border: none;
     background:rgb(31, 75, 223);
 }
+.logo{
+    margin-left: 1cm;
+}
+.cardLink{
+    text-decoration: none;
+    color: black;
+}
+.btnSearch:hover{
+    transition: 0.2s;
+    border: none;
+    background:rgb(37, 78, 212);
+    color: white;
+}
+.btnLogin{
+    text-decoration: none;
+    margin-left: 5px;
+}
+.btnLogin:hover{
+    transition: 0.2s;
+    border: none;
+    background:rgb(37, 78, 212);
+    color: white;
+}

@@ -18,9 +18,9 @@ export const CartItem = ({ item }) => {
         <img src={item.imagenes[0]} alt="imagen" width={"20%"} />
       </div>
       <Link to={`/product/${item._id}`}>
-        <p>{item.modelo}</p>
+      <h3 className="bold" style={{ textTransform: 'capitalize' }}>{item.modelo}</h3>
       </Link>
-
+    
       <p>{item.precio}</p>
 
       <select>

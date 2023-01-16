@@ -2,7 +2,7 @@
 const initialState = {
     zapas: [],
     allZapas: [],
-    detail: [],
+    detail: {},
     cart: []
 }
 
@@ -50,6 +50,12 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 cart: state.cart.filter(e => e._id !== action.payload)
+            };
+
+        case "POST_PRODUCT":
+            return {
+                 ...state,
+                 detail: action.payload
             };
 
         default:

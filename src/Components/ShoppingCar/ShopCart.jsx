@@ -2,6 +2,7 @@ import React from 'react'
 import { CartItem } from './CartItem';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import NavBar from '../NavBar/NavBar';
 
 export const ShopCart = () => {
 
@@ -10,7 +11,8 @@ export const ShopCart = () => {
   return (
     <div>
       <div>
-        <h2>Shopping Car</h2>
+        <NavBar/>
+        <h2>Carrito de compras</h2>
         {cart.length === 0 ? (
           <div> <p>El carrito esta vacio </p><Link to={'/home'}>Regresar</Link> </div>
         ) : (cart.map(e => <CartItem item={e} />)

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -6,13 +7,14 @@ import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
 import Button from 'react-bootstrap/Button';
 import { addToCart } from '../Actions';
-
+import { payOneZapa } from '../Actions';
 
 import publi01 from './imagenes/detalleB01.png';
 import publi02 from './imagenes/detalleB02.png';
 import publi03 from './imagenes/detalleB03.png';
 import publi04 from './imagenes/detalleB04.png';
 
+// CHEQUEO DE DATO MERGE
 
 import './CSS/Detail.css'
 import './CSS/Home.css'
@@ -24,12 +26,17 @@ export default function Details() {
    const { id } = useParams()
    const dispatch = useDispatch()
    const zapa = useSelector(state => state.detail)
-
+   // console.log("ZAPA," , zapa);
 
    useState(() => {
       dispatch(getZapaById(id))
    }, [id])
 
+   const handlePay = () => {
+      // console.log("DETAIL ", zapa);
+      // dispatch(payOneZapa(zapa))
+      axios.post('http://localhost:3001/payment', zapa).then((res) => window.location.href = res.data.response.body.init_point)
+   }
 
    const handleToCart = (e) => {
       e.preventDefault();
@@ -99,12 +106,19 @@ export default function Details() {
                               <option>{zapa.color}</option>
                            </select>
                         </h5>
-                        <div class="action">
-                           <Button variant="primary">Comprar</Button>
-                           <Button value='add' className='btnCart' variant="primary" onClick={handleToCart}
-                           >Añadir al carrito</Button>
-
-                        </div>
+                        {
+                                    zapa?.inventario <= 0
+                                        ? (<button className="btn btn-secondary btn-sm" type="button" disabled >Sin Stock</button>)
+                                        : (
+                                            <>
+                                             <div class="action">
+                                                <Button variant="primary" onClick={handlePay}>Comprar</Button>
+                                                <Button value='add' className='btnCart' variant="primary" onClick={handleToCart}
+                                                >Añadir al carrito</Button>
+                                             </div>
+                                            </>
+                                        )
+                        } 
                      </div>
                   </div>
                </div>

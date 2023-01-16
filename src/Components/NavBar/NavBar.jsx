@@ -82,7 +82,7 @@ export default function NavBar() {
           <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
         <Link to={"/compras"}>
-          <Button className="btnLogin">Cart</Button>
+          <Button className="btnLogin">Carrito</Button>
         </Link>
         <SearchBar />
         <Link to='/login'>

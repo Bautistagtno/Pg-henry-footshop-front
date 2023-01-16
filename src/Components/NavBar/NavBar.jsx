@@ -13,21 +13,21 @@ import Navbar from 'react-bootstrap/Navbar';
 import '../CSS/Home.css'
 
 
-export default function NavBar(){
+export default function NavBar() {
 
-    return(
+  return (
     //     <div>
 
 
-              
+
 
     //         <h1  className='titulo'>Zapatero a tus servicios</h1>
-            
+
     //         <SearchBar/>
 
     //         <Link  className='create' to='/Home'><img className='lhome' src={logo} alt='a'/></Link>
-            
-            
+
+
 
     //         <div className='contenidoselects'>
     //             <select >
@@ -41,7 +41,7 @@ export default function NavBar(){
     //                 <option value="asc">Ascendente</option>
     //                 <option value="des">Descendente</option>
     //             </select>
-               
+
     //             {/* <select  >
     //               <option defaultValue='All'>Marcas</option> 
     //             { allZapas.map((e,i)=>{
@@ -51,45 +51,45 @@ export default function NavBar(){
     //                     )
     //                 }   
     //         </select> */}
-    
+
     //         </div>
     // </div>
 
     <Navbar bg="primary" variant="dark">
-        <Link to='/Home'>
+      <Link to='/Home'>
         <img
-              src={logo}
-              width="100"
-              height="80"
-              className="logo"
-              alt="React Bootstrap logo"
-            />
+          src={logo}
+          width="100"
+          height="80"
+          className="logo"
+          alt="React Bootstrap logo"
+        />
+      </Link>
+      <Container>
+
+        <Navbar.Brand href="#home">FootShop</Navbar.Brand>
+        <Nav className="me-auto">
+
+          <Link to='/home'>
+            <Button className="productos" >Home</Button>
+          </Link>
+
+          <Link to='/zapatillas'>
+            <Button className="productos" >Productos</Button>
+          </Link>
+
+
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+        </Nav>
+        <Link to={"/compras"}>
+          <Button className="btnLogin">Cart</Button>
         </Link>
-        <Container>
-            
-          <Navbar.Brand href="#home">FootShop</Navbar.Brand>
-          <Nav className="me-auto">
-            
-            <Link  to='/home'>
-          <Button className="productos" >Home</Button>
-          </Link>
-
-          <Link  to='/zapatillas'>
-          <Button className="productos" >Productos</Button>
-          </Link>
-            
-          <Link  to='/carritoDeCompras'>
-          <Button className="carrito" >Carrito de compras</Button>
-          </Link>
-
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-          <SearchBar/>
-          <Link  to= '/login'>
+        <SearchBar />
+        <Link to='/login'>
           <Button className="btnLogin" variant="light">Ingresar</Button>
-          </Link>
-        </Container>
-      </Navbar>
+        </Link>
+      </Container>
+    </Navbar>
 
-    )
+  )
 }

@@ -3,7 +3,7 @@ const initialState = {
     zapas: [],
     allZapas: [],
     detail: [],
-    carrito: []
+    cart: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -38,36 +38,20 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
             };
-        //-------------reducer de carrito---------------------------
-        case "AGREGAR_ITEM":
-            const enCarrito = state.carrito.find((item) => item._id === action.payload._id ? true : false);
-            console.log("ESTO HAY EN CARRTIO RED ", enCarrito);
+
+        case "ADD_TO_CART":
+            const item = action.payload;
             return {
                 ...state,
-                carrito: enCarrito
-                    ? state.carrito.map((item) =>
-                        item._id === action.payload._id
-                            ? {...item, qty: item.qty + 1}
-                            : item
-                    )
-                    : [...state.carrito, {...action.payload, qty: 1}]
-            }
-        case "REMOVER_ITEM":
+                cart: [...state.cart, item]
+            };
+
+        case "REMOVE_TO_CART":
             return {
                 ...state,
-                cart: state.carrito.filter((item) => item._id !== action.payload._id)
-            }
-        case "AJUSTAR_CANTIDAD":
-            return {
-                ...state,
-                carrito: state.carrito.map((item) => item._id === action.payload._id
-                    ? { ...item, qty: + action.payload.qty }
-                    : item),
-            }
-        case "LIMPIAR_ITEMS":
-            return {
-                carrito: [],
-            }
+                cart: state.cart.filter(e => e._id !== action.payload)
+            };
+
         default:
             return state
     }

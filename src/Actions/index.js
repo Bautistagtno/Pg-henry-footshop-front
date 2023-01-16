@@ -60,7 +60,28 @@ export function postProduct (payload){
             response
         });
     }
-}
+};
+
+export function addToCart(id) {
+    return async function (dispatch) {
+        const product = await axios.get(`http://localhost:3001/productos/zapatillas/${id}`);
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: product.data,
+             
+                
+        })
+    }
+};
+
+export function removeToCart(id) {
+    return async function (dispatch) {
+        dispatch({
+            type: "REMOVE_TO_CART",
+            payload: id
+        })
+    }
+};
 
 //---------------ACCIONES DEL CARRITO------------------//
 

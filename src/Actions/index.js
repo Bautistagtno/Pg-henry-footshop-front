@@ -83,39 +83,3 @@ export function removeToCart(id) {
     }
 };
 
-//---------------ACCIONES DEL CARRITO------------------//
-
-export const añadirACarrito = (id) => {
-    return async (dispatch) => {
-        const { data } = await axios.get(`http://localhost:3001/productos/zapatillas/${id}`);
-        dispatch(agregarCarrito(data));
-    };
-};
-
-export const agregarCarrito = (prod) => ({
-    type: "AGREGAR_ITEM",
-    payload: prod,
-})
-
-export const removerDelCarrito = (id) => {
-    return {
-        type: "REMOVER_ITEM",
-        payload: {
-            _id: id
-        },
-    };
-};
-
-export const ajustarCantidad = (id, cant) => {
-    return {
-        type: "AJUSTAR_CANTIDAD",
-        payload: {
-            _id: id,
-            qty: cant,
-        },
-    };
-};
-
-export const limpiarCarrito = () => ({
-    type: "LIMPIAR_ITEMS"
-})

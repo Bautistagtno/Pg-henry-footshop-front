@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getZapaById } from '../Actions';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
@@ -82,22 +82,6 @@ export default function Details() {
 
                         </ul>
 
-                     </div>
-                     <br />
-                     <div className="d-grid gap-2 mt-3">
-
-                        {
-                           zapa?.inventario <= 0
-                              ? (<button className="btn btn-secondary btn-sm" type="button" disabled >Sin Stock</button>)
-                              : 
-                              (
-                                 <>
-                                    <Link to={`/carritoDeCompras`} className="btn btn-sm btn-primary" onClick={() => addToCartHandler(zapa?._id)}>Comprar</Link>
-                                    <button className="btn btn-outline-primary btn-sm" type="button" onClick={() => addToCartHandler(zapa?._id)}>Agregar al carrito</button>
-                                 </>
-                              )
-
-                        }
                      </div>
                      <div className="details col-md-6">
                         <h3 className="product-title">{zapa.marca}</h3>

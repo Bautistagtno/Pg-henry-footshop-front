@@ -74,10 +74,13 @@ export default function NavBar(){
           <Button className="productos" >Home</Button>
           </Link>
 
-            <Link  to='/zapatillas'>
+          <Link  to='/zapatillas'>
           <Button className="productos" >Productos</Button>
           </Link>
             
+          <Link  to='/carritoDeCompras'>
+          <Button className="carrito" >Carrito de compras</Button>
+          </Link>
 
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>

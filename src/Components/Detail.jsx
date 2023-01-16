@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getZapaById } from '../Actions';
 import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
 import Button from 'react-bootstrap/Button';
+import { añadirACarrito } from '../Actions';
 
 import publi01 from './imagenes/detalleB01.png';
 import publi02 from './imagenes/detalleB02.png';
@@ -27,6 +28,11 @@ export default function Details() {
    useState(() => {
       dispatch(getZapaById(id))
    }, [id])
+
+   const addToCartHandler = (id) => {
+      console.log("ESTE ES EL ID ", id);
+      dispatch(añadirACarrito(id))
+   }
 
   
    
@@ -93,10 +99,26 @@ export default function Details() {
                            <option>{zapa.color}</option>
                         </select>
                      </h5>
-                     <div class="action">
+                     {/* <div class="action">
                         <Button variant="primary">Comprar</Button>
                         <Button value='add' className='btnCart' variant="primary">Añadir al carrito</Button>
 
+                     </div> */}
+                     <br />
+                     <div className="d-grid gap-2 mt-3">
+
+                        {
+                           zapa?.inventario <= 0
+                              ? (<button className="btn btn-secondary btn-sm" type="button" disabled >Sin Stock</button>)
+                              : 
+                              (
+                                 <>
+                                    <Link to={`/carritoDeCompras`} className="btn btn-sm btn-primary" onClick={() => addToCartHandler(zapa?._id)}>Comprar</Link>
+                                    <button className="btn btn-outline-primary btn-sm" type="button" onClick={() => addToCartHandler(zapa?._id)}>Agregar al carrito</button>
+                                 </>
+                              )
+
+                        }
                      </div>
                   </div>
                </div>

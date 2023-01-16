@@ -8,7 +8,7 @@ import Login from './Components/Login/Login';
 import Productos from './Components/Productos/Productos';
 
 import UploadImg from "./Components/Admin/uploadImg";
-
+import Carrito from "./Components/Cart/Carrito"
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
         <Route exact path = '/crear' element={<Formulario/>} />
         <Route exact path='/zapatillas/:id' element={<Details/>}/>
         <Route path = '/zapatillas' element={<Productos/>} />
+        <Route path='/carritoDeCompras' element={<Carrito/>} />
     </Routes>
     </div>
     </BrowserRouter>

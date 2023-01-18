@@ -23,7 +23,7 @@ export default function Carrusel() {
         
       </Carousel.Item>
       <Carousel.Item>
-        <Link to='/zapatillas/63c20aa4708cd41c2ea5e9de'>
+        <Link to='/zapatillas/63c59f1b822019881ceef8db'>
         <img
           className="carru"
           src={card02}
@@ -33,7 +33,7 @@ export default function Carrusel() {
         
       </Carousel.Item>
       <Carousel.Item>
-      <Link to='/zapatillas/63c20aa4708cd41c2ea5e9eb'>
+      <Link to='/zapatillas/63c59f1b822019881ceef8e8'>
         <img
           className="carru"
           src={card03}
@@ -44,7 +44,7 @@ export default function Carrusel() {
       </Carousel.Item>
 
       <Carousel.Item>
-      <Link to='/zapatillas/63c20aa4708cd41c2ea5e9fe'>
+      <Link to='/zapatillas/63c59f1b822019881ceef8fb'>
         <img
           className="carru"
           src={card04}

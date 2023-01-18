@@ -17,6 +17,7 @@ import publi04 from './imagenes/detalleB04.png';
 import './CSS/Detail.css'
 import './CSS/Home.css'
 import CarruselPromo from './Carrusels/CarruselPromo';
+import axios from 'axios';
 
 
 export default function Details() {
@@ -30,6 +31,11 @@ export default function Details() {
       dispatch(getZapaById(id))
    }, [id])
 
+   const handlePay = () => {
+      // console.log("DETAIL ", zapa);
+      // dispatch(payOneZapa(zapa))
+      axios.post('http://localhost:3001/payment', zapa).then((res) => window.location.href = res.data.response.body.init_point)
+   }
 
    const handleToCart = (e) => {
       e.preventDefault();
@@ -101,7 +107,7 @@ export default function Details() {
                            </select>
                         </h5>
                         <div class="action">
-                           <Button variant="primary">Comprar</Button>
+                           <Button onClick={handlePay} variant="primary">Comprar</Button>
                            <Button value='add' className='btnCart' variant="primary" onClick={handleToCart}
                            >Añadir al carrito</Button>
 

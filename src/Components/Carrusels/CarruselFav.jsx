@@ -16,7 +16,7 @@ export default function CarruselFav(){
   
       <Carousel variant="dark">
       <Carousel.Item>
-      <Link to='/zapatillas/63c20aa4708cd41c2ea5e9f3'>
+      <Link to='/zapatillas/63c59f1b822019881ceef8f0'>
       <img
       className="propa"
       src={publi01}
@@ -26,7 +26,7 @@ export default function CarruselFav(){
       
       </Carousel.Item>
       <Carousel.Item>
-      <Link to='/zapatillas/63c20aa4708cd41c2ea5e9db'>
+      <Link to='/zapatillas/63c59f1b822019881ceef8d8'>
 <img
 className="propa"
 src={publi02}
@@ -36,7 +36,7 @@ alt="Second slide"
 
 </Carousel.Item>
 <Carousel.Item>
-<Link to='/zapatillas/63c20aa4708cd41c2ea5e9d0'>
+<Link to='/zapatillas/63c59f1b822019881ceef8cd'>
 <img
 className="propa"
 src={publi03}
@@ -47,7 +47,7 @@ alt="Third slide"
 </Carousel.Item>
 
 <Carousel.Item>
-<Link to='/zapatillas/63c20aa4708cd41c2ea5e9f9'>
+<Link to='/zapatillas/63c59f1b822019881ceef8f6'>
 <img
 className="propa"
 src={publi04}

@@ -60,5 +60,37 @@ export function postProduct (payload){
             response
         });
     }
-}
+};
 
+export function addToCart(id) {
+    return async function (dispatch) {
+        const product = await axios.get(`http://localhost:3001/productos/zapatillas/${id}`);
+        dispatch({
+            type: "ADD_TO_CART",
+            payload: product.data,
+             
+                
+        })
+    }
+};
+
+export function removeToCart(id) {
+    return async function (dispatch) {
+        dispatch({
+            type: "REMOVE_TO_CART",
+            payload: id
+        })
+    }
+};
+
+// export function payOneZapa(zapatilla) {
+//     return async function (dispatch){
+//         console.log("ESTA ES MI ZAPA ", zapatilla)
+//         const res = await axios.post('http://localhost:3001/payment', zapatilla)
+//         // window.location.href = res.data.response.body.init_point;
+//         return dispatch({
+//             type: "POST_PAYMENT",
+//             payload: res
+//         });
+//     }
+// }

@@ -6,6 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import NavBar from './NavBar/NavBar';
 import Button from 'react-bootstrap/Button';
 import { addToCart } from '../Actions';
+import Footer from './Footer/Footer';
 
 
 import publi01 from './imagenes/detalleB01.png';
@@ -158,6 +159,7 @@ export default function Details() {
       </Carousel.Item>
     </Carousel> */}
          </div>
+         <Footer/>  
       </div>
 
    );

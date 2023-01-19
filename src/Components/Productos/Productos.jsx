@@ -7,6 +7,7 @@ import Cards from '../Card'
 import Paginado from "../Paginado";
 import Carrusel from "../Carrusels/Carrusel";
 import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 import '../CSS/Home.css'
 import './Productos.css'
 import { Filters } from "../Filters/Filters";
@@ -51,6 +52,7 @@ export default function Home(){
     console.log("ESTOS SI SON RESULTADOS ", resultados);
     const contenido = resultados.map((prod, i) => {
         if (resultados.length === i + 1) {
+          
           return (
             <div className="cartas" key={i}>
                                  <Link to={'/zapatillas/' + prod._id} className='cardLink'>
@@ -83,16 +85,23 @@ export default function Home(){
 
         <div>
 
+
             <NavBar/>
+            <Filters/>
 
 
             <div className="cards">
                 {contenido}
-            </div>
-        </div>
-    )
+                
+                </div>
+          </div>
+          
+          )}
 
-}
+
+
+
+
 
 
 // export default function Home(){ 
@@ -143,6 +152,7 @@ export default function Home(){
 
             
 
+
 //             <Paginado
 //                 zapasPerPage={zapasPerPage}
 //                 allZapas={allZapas.length}
@@ -151,5 +161,7 @@ export default function Home(){
 
 //         </div>
 //     )
+
+        
 
 // }

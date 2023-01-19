@@ -33,7 +33,7 @@ export default function Details() {
    }, [id])
 
    const handlePay = () => {
-      // console.log("DETAIL ", zapa);
+      console.log("ESTO TIENE DETAIL ", zapa);
       // dispatch(payOneZapa(zapa))
       axios.post('http://localhost:3001/payment', zapa).then((res) => window.location.href = res.data.response.body.init_point)
    }

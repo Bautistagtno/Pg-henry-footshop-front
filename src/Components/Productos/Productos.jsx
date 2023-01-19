@@ -38,7 +38,7 @@ export default function Home(){
 
         intObserver.current = new IntersectionObserver(productos => {
             if (productos[0].isIntersecting && hasNextPage) {
-                console.log("ESTAMOS CERCA DEL ULTIMO PRODUCTO");
+                console.log("ESTAMOS CERCA DEL ULTIMO PRODUCTO Y CURRENT PAGE ES ", currentPage);
                 setCurrentPage(prev => prev + 1);
             }
         })

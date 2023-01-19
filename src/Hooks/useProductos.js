@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getZapas } from "../Actions";
 
-const useProductos = (pageNum = 1) => {
+const useProductos = (pageNum) => {
     const dispatch = useDispatch()
     const allZapas = useSelector(state => state.zapas)
     const [resultados, setResultados] = useState([]);
@@ -11,10 +11,15 @@ const useProductos = (pageNum = 1) => {
     const [isError, setIsError] = useState(false);
     const [error, setError] = useState({});
     const [hasNextPage, setHasNextPage] = useState(false);
-
+    const [pages, setPages] = useState(10);
+    
+    
     useEffect(() => {
-      dispatch(getZapas());
+        dispatch(getZapas());
     }, [dispatch]);
+    
+    const cantPages = Math.ceil(allZapas.length / 10);
+    console.log("ESTAS PAGES ", pages);
     
     
     useEffect(() => {
@@ -26,12 +31,25 @@ const useProductos = (pageNum = 1) => {
             setIsError(false);
             setError({});
             
+            let currentZapas = allZapas.slice(pageNum, pages);
+            if (pageNum !== 1) {
+                currentZapas = allZapas.slice(pages, pages + 10)
+            }
+            setPages(pages + 10);
             
-            // const data = allZapas;
-            // console.log("ESTO TRAE DATA ", allZapas);
             
-            setResultados(previos => [...previos, ...allZapas]);
-            setHasNextPage(Boolean(allZapas.length));
+            // setResultados(previos => [...previos, ...allZapas]);
+            // console.log("ESTO ES LO QUE TIENE PAGE NUM ", pageNum);
+            // setHasNextPage(Boolean(allZapas.length));
+            // setIsLoading(false);
+            setResultados(previos => [...previos, ...currentZapas]);
+            console.log("ESTO ES LO QUE TIENE PAGE NUM ", pageNum);
+            
+            if (pageNum === cantPages) {
+                setHasNextPage(false);
+            } else {
+                setHasNextPage(Boolean(allZapas.length));
+            }
             setIsLoading(false);
         } catch (e) {
             setIsLoading(false);

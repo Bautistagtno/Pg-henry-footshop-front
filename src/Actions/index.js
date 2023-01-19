@@ -83,3 +83,14 @@ export function removeToCart(id) {
     }
 };
 
+// export function payOneZapa(zapatilla) {
+//     return async function (dispatch){
+//         console.log("ESTA ES MI ZAPA ", zapatilla)
+//         const res = await axios.post('http://localhost:3001/payment', zapatilla)
+//         // window.location.href = res.data.response.body.init_point;
+//         return dispatch({
+//             type: "POST_PAYMENT",
+//             payload: res
+//         });
+//     }
+// }

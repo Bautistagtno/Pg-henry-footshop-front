@@ -19,7 +19,7 @@ const useProductos = (pageNum) => {
     }, [dispatch]);
     
     const cantPages = Math.ceil(allZapas.length / 10);
-    console.log("ESTAS PAGES ", pages);
+    // console.log("ESTAS PAGES ", pages);
     
     
     useEffect(() => {
@@ -43,7 +43,7 @@ const useProductos = (pageNum) => {
             // setHasNextPage(Boolean(allZapas.length));
             // setIsLoading(false);
             setResultados(previos => [...previos, ...currentZapas]);
-            console.log("ESTO ES LO QUE TIENE PAGE NUM ", pageNum);
+            // console.log("ESTO ES LO QUE TIENE PAGE NUM ", pageNum);
             
             if (pageNum === cantPages) {
                 setHasNextPage(false);

@@ -45,7 +45,7 @@ export default function Carrito({history}){
                         (
                             <>
                                 <div>
-                                    <span> Tu carrito está vacío </span>
+                                    <span> Tus carrito está vacío </span>
                                 </div>
                             </>
                         ) :

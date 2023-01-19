@@ -55,7 +55,7 @@ export default function NavBar() {
     //         </div>
     // </div>
 
-    <Navbar bg="primary" variant="dark">
+    <Navbar className="bg-primary bg-gradient">
       <Link to='/Home'>
         <img
           src={logo}
@@ -67,19 +67,19 @@ export default function NavBar() {
       </Link>
       <Container>
 
-        <Navbar.Brand href="#home">FootShop</Navbar.Brand>
+        <Navbar.Brand href="#home" className="text-white">FootShop</Navbar.Brand>
         <Nav className="me-auto">
 
           <Link to='/home'>
-            <Button className="productos" >Home</Button>
+          <button className=" bg-transparent border-0 text-white" >Home</button>
           </Link>
 
           <Link to='/zapatillas'>
-            <Button className="productos" >Productos</Button>
+            <button className="bg-transparent border-0 text-white" >Productos</button>
           </Link>
 
 
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          
         </Nav>
       
         <Link className='btnCart' to={"/compras"}>

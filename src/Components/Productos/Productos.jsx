@@ -7,6 +7,7 @@ import Cards from '../Card'
 import Paginado from "../Paginado";
 import Carrusel from "../Carrusels/Carrusel";
 import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 import '../CSS/Home.css'
 import './Productos.css'
 import { Filters } from "../Filters/Filters";
@@ -42,7 +43,7 @@ export default function Home(){
         <div>
 
 <NavBar/>
-
+<Filters/>
 
             <div className="cards">
                 {
@@ -52,7 +53,7 @@ export default function Home(){
                                 <Link to={'/zapatillas/' + e._id} className='cardLink'>
                                     <Cards
                                         marca={e.marca}
-                                        image={e.imagen1}
+                                        image={e.imagenes && e.imagenes[0]}
                                         modelo={e.modelo}
                                         precio={e.precio}
                                         />
@@ -70,7 +71,7 @@ export default function Home(){
                 allZapas={allZapas.length}
                 paginado={paginado}
             />
-
+        <Footer/>  
         </div>
     )
 

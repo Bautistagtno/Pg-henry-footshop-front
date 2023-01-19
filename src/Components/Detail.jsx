@@ -7,7 +7,7 @@ import NavBar from './NavBar/NavBar';
 import Button from 'react-bootstrap/Button';
 import { addToCart } from '../Actions';
 import Footer from './Footer/Footer';
-
+import swal from 'sweetalert';
 
 import publi01 from './imagenes/detalleB01.png';
 import publi02 from './imagenes/detalleB02.png';
@@ -36,7 +36,10 @@ export default function Details() {
       e.preventDefault();
       //console.log(id)
       dispatch(addToCart(id))
-      window.alert("Producto añadido al carrito exitosamente!");
+      swal({
+         icon: "success",
+         title: 'Producto añadido con éxito!'
+       });
    }
 
    return (

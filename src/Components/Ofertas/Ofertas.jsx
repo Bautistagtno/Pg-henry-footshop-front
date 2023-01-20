@@ -8,7 +8,7 @@ import Paginado from "../Paginado";
 import Carrusel from "../Carrusels/Carrusel";
 import NavBar from "../NavBar/NavBar";
 import '../CSS/Home.css'
-import './Productos.css'
+// import './Productos.css'
 import { Filters } from "../Filters/Filters";
 
 
@@ -18,7 +18,7 @@ import { Navbar } from "react-bootstrap";
 
 
 
-export default function Productos(){ 
+export default function Ofertas(){ 
 
     const dispatch = useDispatch()
     const allZapas = useSelector(state => state.zapas)

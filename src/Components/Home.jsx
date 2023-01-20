@@ -52,7 +52,7 @@ export default function Home(){
                
 
 
-            <div className="cards">
+            {/* <div className="cards">
                 {
                     currentZapas && currentZapas.map((e, i) => {
                         return (
@@ -76,7 +76,7 @@ export default function Home(){
                 zapasPerPage={zapasPerPage}
                 allZapas={allZapas.length}
                 paginado={paginado}
-            />
+            /> */}
 
             <CarruselFav/> 
             <CarruselMasV/> 

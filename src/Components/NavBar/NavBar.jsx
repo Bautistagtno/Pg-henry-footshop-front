@@ -79,7 +79,9 @@ export default function NavBar() {
           </Link>
 
 
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+          <Link to='/zapatillas'>
+            <Button className="productos" >Ofertas</Button>
+          </Link>
         </Nav>
       
         <Link className='btnCart' to={"/compras"}>

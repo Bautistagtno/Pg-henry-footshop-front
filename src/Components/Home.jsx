@@ -8,7 +8,7 @@ import Paginado from "./Paginado";
 import Carrusel from "./Carrusels/Carrusel";
 import NavBar from "./NavBar/NavBar";
 import './CSS/Home.css'
-import { Filters } from "./Filters/Filters";
+import Footer from "./Footer/Footer";
 
 
 // import Scroll from "./Scroll/Scroll";
@@ -46,6 +46,7 @@ export default function Home(){
 
             <NavBar />
             {/* <Filters /> */}
+            
             <Carrusel />
 
             <button><Link  to= '/Crear'>Cargar Zapas</Link></button>   
@@ -82,7 +83,7 @@ export default function Home(){
             <CarruselMasV/> 
 
 
-                
+           <Footer/>     
 
         </div>
     )

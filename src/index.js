@@ -8,24 +8,6 @@ import {store} from './Store';
 import { Auth0Provider } from "@auth0/auth0-react";
 import 'bootstrap/dist/css/bootstrap.css'; 
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
-import { render } from "react-dom";
-
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <Provider store={store}  >
-//   <React.StrictMode>
-//     <Auth0Provider
-//     domain="henry-pg-2023.us.auth0.com"
-//     clientId="cXpvK53yrkIiTcA6dlMhNoHdI6WoqnkQ"
-//     redirectUri={window.location.origin }
-//     > 
-//  <App/> 
-//      </Auth0Provider>
-//    </React.StrictMode>
-// </Provider>
-//  );
-
 
 
 render(

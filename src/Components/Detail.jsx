@@ -22,7 +22,7 @@ import publi04 from './imagenes/detalleB04.png';
 import './CSS/Detail.css'
 import './CSS/Home.css'
 import CarruselPromo from './Carrusels/CarruselPromo';
-import axios from 'axios';
+
 
 
 export default function Details() {

@@ -83,6 +83,31 @@ export function removeToCart(id) {
     }
 };
 
+export function addToFav(id) {
+        return async function (dispatch) {
+            const product = await axios.get(`http://localhost:3001/productos/zapatillas/${id}`);
+            dispatch({
+                type: "ADD_TO_FAV",
+                payload: product.data,
+                 
+                    
+            })
+        }
+    };
+    
+    export function removeToFav(id) {
+        return async function (dispatch) {
+            dispatch({
+                type: "REMOVE_TO_FAV",
+                payload: id
+            })
+        }
+    };
+
+
+
+
+//---------------------------------------------------
 // export function payOneZapa(zapatilla) {
 //     return async function (dispatch){
 //         console.log("ESTA ES MI ZAPA ", zapatilla)

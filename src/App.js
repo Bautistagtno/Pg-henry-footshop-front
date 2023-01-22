@@ -6,7 +6,7 @@ import Formulario from './Components/Formulario/Formulario'
 import Login from './Components/Login/Login';
 
 import Productos from './Components/Productos/Productos';
-
+import Favorito from './Components/Favoritos/Favoritos';
 import UploadImg from "./Components/Admin/uploadImg";
 import ShopCart from './Components/ShoppingCar/ShopCart';
 
@@ -20,6 +20,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
+        <Route Route exact path='/favoritos' element={<Favorito />}></Route>
           <Route Route exact path='/compras' element={<ShopCart />}></Route>
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/' element={<LandingPage />} />

@@ -10,6 +10,8 @@ import { addToCart } from '../Actions';
 import { payOneZapa } from '../Actions';
 import Footer from './Footer/Footer';
 import swal from 'sweetalert';
+import { addToFav, removeToFav } from '../Actions';
+
 
 
 import publi01 from './imagenes/detalleB01.png';
@@ -44,6 +46,15 @@ export default function Details() {
       swal({
          icon: "success",
          title: 'Producto añadido con éxito!'
+       });
+   }
+   const handleToFavorite = (e) => {
+      e.preventDefault();
+      //console.log(id)
+      dispatch(addToFav(id))
+      swal({
+         icon: "success",
+         title: 'Producto agregado a la lista de favoritos!'
        });
    }
 
@@ -110,9 +121,11 @@ export default function Details() {
                            </select>
                         </h5>
                         <div class="action">
+                           <Button value='add' className='btnCart' variant="primary" onClick={handleToFavorite}>❤️</Button>
                            <Button variant="primary">Comprar</Button>
                            <Button value='add' className='btnCart' variant="primary" onClick={handleToCart}
                            >Añadir al carrito</Button>
+                                                                                                               
 
                         </div>
                      </div>

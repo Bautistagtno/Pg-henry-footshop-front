@@ -3,7 +3,8 @@ const initialState = {
     zapas: [],
     allZapas: [],
     detail: {},
-    cart: []
+    cart: [],
+    favorite:[]
 }
 
 function rootReducer(state = initialState, action) {
@@ -60,6 +61,22 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 cart: state.cart.filter(e => e._id !== action.payload)
             };
+
+            case "ADD_TO_FAV":
+    const item2 = state.favorite.find((item) => item._id === action.payload._id ? true : false);
+    
+    return {
+        ...state,
+        favorite: item2 ? state.favorite.map((item) =>
+            item._id === action.payload._id ? { ...item, qty: item.qty + 1} : item
+        ) : [...state.favorite, { ...action.payload, qty: 1}]
+    };
+
+case "REMOVE_TO_FAV":
+    return {
+        ...state,
+        favorite: state.favorite.filter(e => e._id !== action.payload)
+    };
 
         case "POST_PRODUCT":
             return {

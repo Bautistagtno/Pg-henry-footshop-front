@@ -10,6 +10,9 @@ import Productos from './Components/Productos/Productos';
 import UploadImg from "./Components/Admin/uploadImg";
 import ShopCart from './Components/ShoppingCar/ShopCart';
 
+import Contenido from './Components/ChatBot/ChatBot';
+import Ofertas from './Components/Ofertas/Ofertas';
+
 
 
 function App() {
@@ -25,7 +28,10 @@ function App() {
           <Route exact path='/crear' element={<Formulario />} />
           <Route exact path='/zapatillas/:id' element={<Details />} />
           <Route path='/zapatillas' element={<Productos />} />
+          <Route path='/zapatillas' element={<Ofertas />} />
         </Routes>
+
+        <Contenido/>
       </div>
     </BrowserRouter>
   );

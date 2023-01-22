@@ -22,6 +22,9 @@ import useProductos from "../../Hooks/useProductos";
 
 
 export default function Home(){ 
+
+    const dispatch = useDispatch()
+    const allZapas = useSelector(state => state.zapas)
     const [currentPage, setCurrentPage] = useState(1)
     const {
         isLoading,
@@ -89,7 +92,7 @@ export default function Home(){
             <NavBar/>
             <Filters/>
 
-
+<Filters />
             <div className="cards">
                 {contenido}
                 

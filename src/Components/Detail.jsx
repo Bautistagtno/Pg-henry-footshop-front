@@ -24,6 +24,7 @@ import './CSS/Home.css'
 import CarruselPromo from './Carrusels/CarruselPromo';
 
 
+
 export default function Details() {
 
    const { id } = useParams()
@@ -35,11 +36,6 @@ export default function Details() {
       dispatch(getZapaById(id))
    }, [id])
 
-   const handlePay = () => {
-      console.log("ESTO TIENE DETAIL ", [zapa]);
-      // dispatch(payOneZapa(zapa))
-      axios.post('http://localhost:3001/payment', [zapa]).then((res) => window.location.href = res.data.response.body.init_point)
-   }
 
    const handleToCart = (e) => {
       e.preventDefault();
@@ -113,19 +109,12 @@ export default function Details() {
                               <option>{zapa.color}</option>
                            </select>
                         </h5>
-                        {
-                                    zapa?.inventario <= 0
-                                        ? (<button className="btn btn-secondary btn-sm" type="button" disabled >Sin Stock</button>)
-                                        : (
-                                            <>
-                                             <div class="action">
-                                                <Button variant="primary" onClick={handlePay}>Comprar</Button>
-                                                <Button value='add' className='btnCart' variant="primary" onClick={handleToCart}
-                                                >Añadir al carrito</Button>
-                                             </div>
-                                            </>
-                                        )
-                        } 
+                        <div class="action">
+                           <Button variant="primary">Comprar</Button>
+                           <Button value='add' className='btnCart' variant="primary" onClick={handleToCart}
+                           >Añadir al carrito</Button>
+
+                        </div>
                      </div>
                   </div>
                </div>

@@ -3,7 +3,8 @@ const initialState = {
     zapas: [],
     allZapas: [],
     detail: {},
-    cart: []
+    cart: [],
+    ofertas: [],
 }
 
 function rootReducer(state = initialState, action) {
@@ -13,7 +14,7 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 zapas: action.payload,
-                allZapas: action.payload
+                allZapas: action.payload,
             };
 
         case 'GET_MODELO_ZAPAS':
@@ -67,9 +68,29 @@ function rootReducer(state = initialState, action) {
                  detail: action.payload
             };
 
+            
+        case "GET_OFERTAS_ZAPAS":
+            // const ofertasZapas = state.ofertas;
+            const ofertasZapas = action.payload;
+console.log(ofertasZapas, "ASFDASFADSFGA")
+        // const ofertasFiltradas = ofertasZapas !== null ? ofertasZapas : 
+        
+        // const ofertasFiltradas = action.payload !== undefined ? ofertasZapas : ofertasZapas.filter((zapas) => zapas.oferta? zapas.oferta.includes(action.payload) : zapas.oferta.map((e) => e.oferta)); 
+
+
+           
+
+            return {
+                ...state,
+                // ofertas: ofertasFiltradas,
+                ofertas: ofertasZapas
+
+            }
+
         default:
             return state
     }
+
 
 }
 

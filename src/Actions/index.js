@@ -94,3 +94,17 @@ export function removeToCart(id) {
 //         });
 //     }
 // }
+
+
+export function getOfertasZapas(ofertas){
+    return async function(dispatch){
+        var ofertas = await axios.get(`http://localhost:3001/productos/ofertas`)
+
+        // var json = await axios.get('http://localhost:3001/productos/zapatillas')
+        
+        return dispatch({
+        type: 'GET_OFERTAS_ZAPAS',
+        payload: ofertas.data
+        })
+    }
+};

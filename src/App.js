@@ -28,7 +28,7 @@ function App() {
           <Route exact path='/crear' element={<Formulario />} />
           <Route exact path='/zapatillas/:id' element={<Details />} />
           <Route path='/zapatillas' element={<Productos />} />
-          <Route path='/zapatillas' element={<Ofertas />} />
+          <Route path='/zapatillas/ofertas' element={<Ofertas />} />
         </Routes>
 
         <Contenido/>

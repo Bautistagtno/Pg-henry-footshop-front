@@ -9,6 +9,7 @@ import Carrusel from "./Carrusel";
 import NavBar from "./NavBar/NavBar";
 import './CSS/Home.css'
 import { Filters } from "./Filters/Filters";
+import {io} from "socket.io-client"
 
 
 
@@ -33,6 +34,10 @@ export default function Home(){
     useEffect(() => {
         dispatch(getZapas());
     }, [dispatch])
+
+    useEffect(() => {
+        const socket = io("http://localhost:5000")
+    },[])
 
 
     return (

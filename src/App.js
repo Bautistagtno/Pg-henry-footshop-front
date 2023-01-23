@@ -5,6 +5,7 @@ import Details from './Components/Detail';
 import Formulario from './Components/Formulario/Formulario'
 import Login from './Components/Login/Login';
 import UploadImg from "./Components/Admin/uploadImg";
+import SendNotification from './Components/Admin/SendNotification';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div>
       <Routes>
         <Route exact path='/login' element={<Login/>}/>
+        <Route exact path='/sendNotification' element={<SendNotification/>}/>
         <Route exact path = '/' element={<LandingPage/>} />
         <Route exact path='/uploadImg' element={<UploadImg/>}/>
         <Route path = '/Home' element={<Home/>} />

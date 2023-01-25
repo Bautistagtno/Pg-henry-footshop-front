@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Formulario from "../Formulario/Formulario"
 
 export default function UploadImg() {
   const [loading, setLoading] = useState(false);
@@ -48,7 +49,7 @@ export default function UploadImg() {
               ></path>
             </svg>
             <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-              <span className="font-semibold">Click para subir</span> o arrastrar y soltar
+              <span className="font-semibold">Click para subir</span>
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
               SVG, PNG, JPG or GIF (MAX. 800x400px)
@@ -115,14 +116,7 @@ export default function UploadImg() {
   return (
     <div>
       <div>
-        {url && (
-          <div>
-            Accede a el link de tu img = {" "}
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              {url}
-            </a>
-          </div>
-        )}
+        {url && <Formulario img={url} />}
       </div>
       <div>
         {loading ? (

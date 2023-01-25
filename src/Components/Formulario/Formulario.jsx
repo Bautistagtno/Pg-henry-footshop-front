@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 
-const HookForm = () => {
+const HookForm = (url) => {
     // if (!whitespacesParameter.test(newrecipe.name) || !alphabeticalPattern.test(newrecipe.name)){
     //     errors.name= "El nombre ingresado no puede contener caracteres especiales ni números"
     //   }
@@ -167,10 +167,12 @@ const HookForm = () => {
         
         console.log(input, 'input')
     }
+    console.log(url)
 
     return (
         <Fragment>
             <h2>Carga de productos</h2>
+            {url && <h2>{`imagenes cargadas = ${url.img}`}</h2>}
             <form onSubmit={handleSubmit}>
                 {/* <form> */}
                 <input

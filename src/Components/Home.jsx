@@ -25,27 +25,29 @@ export default function Home(){
     const indexOfLastZapa = currentPage * zapasPerPage
     const indexOfFirstZapa = indexOfLastZapa - zapasPerPage
     const currentZapas = allZapas.slice(indexOfFirstZapa, indexOfLastZapa)
-
+    const [socket, setSocket] = useState(null)
 
     const paginado = (pageNumber) => {
         setCurrentPage(pageNumber)
     }
 
     useEffect(() => {
-        dispatch(getZapas());
+        dispatch(getZapas());   
     }, [dispatch])
 
     useEffect(() => {
-        const socket = io("http://localhost:5000")
+        setSocket(io("http://localhost:5000"))
     },[])
 
+   
 
+    console.log(socket)
     return (
 
         <div>
 
-
-            <NavBar />
+            {socket && <NavBar socket={socket}/>}
+            
             <Filters />
             <Carrusel />
 
